@@ -7,7 +7,7 @@ phases:
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 993471916179.dkr.ecr.us-east-1.amazonaws.com
       - # Replace with this to your repository URI
-      - REPOSITORY_URI=993471916179.dkr.ecr.us-east-1.amazonaws.com/project-ahr-repo
+      - REPOSITORY_URI=640215541898.dkr.ecr.us-east-1.amazonaws.com/project-ahr-repo
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
