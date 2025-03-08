@@ -2,10 +2,10 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR.... 
+      - echo Logging in to Amazon ECR....
       #checking version 
       - aws --version
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin c.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 640215541898.dkr.ecr.us-east-1.amazonaws.com
       - # Replace with this to your repository URI
       - REPOSITORY_URI=640215541898.dkr.ecr.us-east-1.amazonaws.com/project-ahr-repo
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
@@ -21,7 +21,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - echo $REPOSITORY_URI:latest
+      - echo $REPOSITORY_URI:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
