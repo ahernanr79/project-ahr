@@ -11,7 +11,7 @@ public class MyApplication {
 
 	@RequestMapping("/")
 	String home() {
-		return "Hello World!";
+		return "This is a spring boot application. Testing the deployment on AWS using CodePipeline. HAVE A GREAT DAY!";
 	}
 
 	public static void main(String[] args) {
